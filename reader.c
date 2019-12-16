@@ -6,7 +6,7 @@
 /*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 14:14:33 by skrasin           #+#    #+#             */
-/*   Updated: 2019/12/16 13:21:02 by skrasin          ###   ########.fr       */
+/*   Updated: 2019/12/16 13:32:45 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int			ft_move(t_tetris *tab)
 {
 	int minx;
 	int miny;
-	int i;
+	ssize_t i;
 
 	minx = tab->x[0][0];
 	miny = tab->x[1][0];
