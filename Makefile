@@ -6,13 +6,13 @@
 #    By: svet <svet@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/06 18:14:59 by iklimov           #+#    #+#              #
-#    Updated: 2019/12/16 11:15:59 by svet             ###   ########.fr        #
+#    Updated: 2019/12/16 11:22:44 by svet             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fillit
 CFLG = -Wextra -Wall -Werror
-SRCS = fillit.c error.c solve.c reader.c
+SRCS = fillit.c error.c solve.c reader.c ft_isqrtc.c
 LIB = Libft/libft.a
 
 all: $(NAME)
