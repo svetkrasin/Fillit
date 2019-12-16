@@ -6,36 +6,37 @@
 /*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 13:45:32 by skrasin           #+#    #+#             */
-/*   Updated: 2019/12/16 12:32:18 by skrasin          ###   ########.fr       */
+/*   Updated: 2019/12/16 13:13:22 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-t_tetris	*reader(int fd, int *n)
+t_tetris	*reader(int fd, size_t *n)
 {
-	int			bytesread;
+	ssize_t		len;
 	char		buff[22];
 	t_tetris	*tab;
 	t_tetris	*tail;
 
 	tab = NULL;
-	bytesread = 21;
-	while (bytesread == 21)
+	len = 21;
+	while (len == 21)
 	{
-		bytesread = read(fd, buff, 21);
-		buff[bytesread] = '\0';
+		len = read(fd, buff, 21);
+		buff[len] = '\0';
 		tail = new_tetr(&tab);
-		if ((++(*n)) && validate(buff, bytesread, tail) == 0)
+		if (validate(buff, len, tail) == 0)
 		{
 			list_dell(&tab);
 			return (NULL);
 		}
+		(*n)++;
 	}
 	return (tab);
 }
 
-void		ft_solve(t_tetris *node, int n)
+void		ft_solve(t_tetris *node, size_t n)
 {
 	char *map;
 
@@ -50,7 +51,7 @@ void		ft_solve(t_tetris *node, int n)
 int			main(int argc, char **argv)
 {
 	int			fd;
-	int			n;
+	size_t		n;
 	t_tetris	*tab;
 
 	if (argc == 2)

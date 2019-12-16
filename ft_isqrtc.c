@@ -6,16 +6,16 @@
 /*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/14 20:27:23 by skrasin           #+#    #+#             */
-/*   Updated: 2019/12/16 12:32:23 by skrasin          ###   ########.fr       */
+/*   Updated: 2019/12/16 13:19:02 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-unsigned int	ft_isqrtc(int n)
+size_t	ft_isqrtc(size_t n)
 {
-	int x;
-	int y;
+	size_t x;
+	size_t y;
 
 	y = 1;
 	x = n;
@@ -29,7 +29,7 @@ unsigned int	ft_isqrtc(int n)
 	return (x);
 }
 
-int				ft_abs(int i)
+int		ft_abs(int i)
 {
 	int const mask = i >> (sizeof(int) * 8 - 1);
 

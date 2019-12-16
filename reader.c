@@ -6,7 +6,7 @@
 /*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 14:14:33 by skrasin           #+#    #+#             */
-/*   Updated: 2019/12/16 12:32:31 by skrasin          ###   ########.fr       */
+/*   Updated: 2019/12/16 13:21:02 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_tetris	*new_tetr(t_tetris **tab)
 {
-	int				j;
-	static int		count = 0;
+	ssize_t			j;
+	static size_t	count = 0;
 	static t_tetris	*tail = NULL;
 	t_tetris		*new;
 
@@ -67,12 +67,12 @@ int			ft_move(t_tetris *tab)
 
 int			tetr_add(t_tetris *t, int n)
 {
-	int i;
-	int j;
-	int connection;
+	ssize_t i;
+	ssize_t j;
+	size_t	connection;
 
 	i = 0;
-	while (t->x[0][i] != -1 && i > -1)
+	while (t->x[0][i] != -1)
 		if (i++ > 3)
 			return (0);
 	t->x[0][i] = n % 5;
@@ -94,10 +94,10 @@ int			tetr_add(t_tetris *t, int n)
 	return (1);
 }
 
-int			validate(char *buff, int bytesread, t_tetris *tab)
+int			validate(char *buff, ssize_t bytesread, t_tetris *tab)
 {
-	int i;
-	int num;
+	ssize_t i;
+	int		num;
 
 	i = 0;
 	num = 0;

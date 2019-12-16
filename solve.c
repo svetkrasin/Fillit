@@ -6,13 +6,13 @@
 /*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/09 17:26:29 by skrasin           #+#    #+#             */
-/*   Updated: 2019/12/16 12:32:33 by skrasin          ###   ########.fr       */
+/*   Updated: 2019/12/16 13:17:02 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-char	*ft_create_map(int n)
+char	*ft_create_map(size_t n)
 {
 	char	*map;
 	size_t	l;
@@ -25,9 +25,9 @@ char	*ft_create_map(int n)
 	return (map);
 }
 
-int		ft_put_tetr(t_tetris node, int n, char *map, int *i)
+int		ft_put_tetr(t_tetris node, size_t n, char *map, ssize_t *i)
 {
-	int j;
+	ssize_t j;
 
 	while (map[++*i] != '\0')
 	{
@@ -47,18 +47,18 @@ int		ft_put_tetr(t_tetris node, int n, char *map, int *i)
 	return (*i);
 }
 
-void	ft_free_c(char *map, t_tetris node, int i, int n)
+void	ft_free_c(char *map, t_tetris node, size_t i, size_t n)
 {
-	int j;
+	size_t j;
 
 	j = -1;
 	while (++j < 4)
 		map[i + node.x[0][j] + n * node.x[1][j]] = '.';
 }
 
-int		ft_print_map(char *map, int n)
+int		ft_print_map(char *map, size_t n)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	while (map[i] != '\0')
@@ -71,11 +71,11 @@ int		ft_print_map(char *map, int n)
 	return (1);
 }
 
-int		ft_backtrack(char *map, t_tetris *node, int n)
+int		ft_backtrack(char *map, t_tetris *node, size_t n)
 {
-	int i;
-	int l;
-	int	k;
+	ssize_t i;
+	ssize_t l;
+	ssize_t	k;
 
 	i = -1;
 	l = n * n;
