@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fillit.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/08 13:48:40 by iklimov           #+#    #+#             */
-/*   Updated: 2019/12/16 11:21:59 by svet             ###   ########.fr       */
+/*   Created: 2019/11/08 13:48:40 by skrasin           #+#    #+#             */
+/*   Updated: 2019/12/16 12:32:21 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FILLIT_H
 # include "Libft/libft.h"
 # include <sys/stat.h>
-#include <fcntl.h>
+# include <fcntl.h>
 # include <unistd.h>
 
 typedef struct		s_tetris

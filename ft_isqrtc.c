@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isqrtc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svet <svet@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: skrasin <skrasin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/14 20:27:23 by iklimov           #+#    #+#             */
-/*   Updated: 2019/12/16 11:16:44 by svet             ###   ########.fr       */
+/*   Created: 2019/11/14 20:27:23 by skrasin           #+#    #+#             */
+/*   Updated: 2019/12/16 12:32:23 by skrasin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,9 @@ unsigned int	ft_isqrtc(int n)
 	return (x);
 }
 
-int	ft_abs(int i)
+int				ft_abs(int i)
 {
 	int const mask = i >> (sizeof(int) * 8 - 1);
+
 	return ((i + mask) ^ mask);
 }
